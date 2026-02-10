@@ -1,117 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MovieFlex Pro - Fixed Search</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <title>InstaSave Pro - Unlimited</title>
     <style>
-        .genre-btn.active { background-color: #dc2626; border-color: #dc2626; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
+        body { font-family: sans-serif; background: #f0f2f5; text-align: center; padding: 20px; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 400px; margin: auto; }
+        .logo { color: #bc1888; font-size: 28px; font-weight: bold; margin-bottom: 20px; }
+        input { width: 90%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; }
+        .btn { background: linear-gradient(45deg, #f09433, #bc1888); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
+        #msg { margin-top: 15px; color: #666; font-size: 14px; }
     </style>
 </head>
-<body class="bg-[#0f0f0f] text-white font-sans pb-20">
+<body>
 
-    <nav class="bg-black/95 sticky top-0 z-50 p-4 border-b border-white/10">
-        <div class="flex items-center justify-between max-w-7xl mx-auto mb-3">
-            <div class="text-2xl font-black text-red-600 italic">MOVIEFLEX</div>
-            <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center border border-white/20 italic">A</div>
-        </div>
-        
-        <div class="relative max-w-7xl mx-auto">
-            <input type="text" id="searchInput" placeholder="Search movies by title..." 
-                class="w-full bg-zinc-900 text-sm border border-zinc-700 rounded-full px-5 py-2.5 focus:ring-2 focus:ring-red-600 outline-none transition-all">
-            <i class="fas fa-search absolute right-5 top-3 text-gray-500"></i>
-        </div>
-    </nav>
+<div class="card">
+    <div class="logo">InstaSave</div>
+    <input type="text" id="instaUrl" placeholder="Paste Reel Link Here...">
+    <button class="btn" onclick="startDownload()">DOWNLOAD NOW</button>
+    <div id="msg"></div>
+</div>
 
-    <div class="px-4 mt-6 overflow-x-auto no-scrollbar flex space-x-3 pb-2">
-        <button onclick="filterGenre('All')" class="genre-btn active shrink-0 border border-zinc-700 px-5 py-1.5 rounded-full text-xs font-bold">All</button>
-        <button onclick="filterGenre('Action')" class="genre-btn shrink-0 border border-zinc-700 px-5 py-1.5 rounded-full text-xs font-bold">Action</button>
-        <button onclick="filterGenre('Horror')" class="genre-btn shrink-0 border border-zinc-700 px-5 py-1.5 rounded-full text-xs font-bold">Horror</button>
-        <button onclick="filterGenre('Comedy')" class="genre-btn shrink-0 border border-zinc-700 px-5 py-1.5 rounded-full text-xs font-bold">Comedy</button>
-    </div>
+<script>
+function startDownload() {
+    let url = document.getElementById('instaUrl').value;
+    let msg = document.getElementById('msg');
 
-    <main class="p-4">
-        <h2 id="sectionTitle" class="text-lg font-bold mb-5 flex items-center uppercase tracking-widest text-zinc-400">
-            <span class="w-1 h-4 bg-red-600 mr-2"></span> Trending
-        </h2>
-        <div id="movieGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            </div>
-    </main>
+    if(url === "") {
+        alert("Pehle link toh daalo!");
+        return;
+    }
 
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-black border-t border-white/10 flex justify-around py-3 z-50">
-        <button onclick="location.reload()" class="flex flex-col items-center text-red-600"><i class="fas fa-home"></i><span class="text-[10px]">Home</span></button>
-        <button onclick="document.getElementById('searchInput').focus()" class="flex flex-col items-center text-gray-400"><i class="fas fa-search"></i><span class="text-[10px]">Search</span></button>
-        <button class="flex flex-col items-center text-gray-400"><i class="fas fa-user"></i><span class="text-[10px]">Profile</span></button>
-    </div>
+    // 💰 STEP 1: Pehle aapka Ad khulega (Paisa Banega)
+    window.open('https://www.effectivegatecpm.com/vtmh95ctdp?key=1fee91a483f6d0a99fcb079c648eedbf', '_blank');
 
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyCu-4-gljkUpJ-i8dsoyOcmo9j84kUebEs",
-            authDomain: "movie-mekar-7f271.firebaseapp.com",
-            databaseURL: "https://movie-mekar-7f271-default-rtdb.firebaseio.com",
-            projectId: "movie-mekar-7f271",
-            storageBucket: "movie-mekar-7f271.firebasestorage.app",
-            messagingSenderId: "389780490565",
-            appId: "1:389780490565:web:a9f5c722250539df61162c"
-        };
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.database();
+    // 🚀 STEP 2: Ab video download page par le jayega
+    msg.innerText = "Video Fetch Ho Rahi Hai... Wait Karein";
+    
+    // Yeh free server hai jo link se video nikal lega
+    let finalDownloadLink = "https://saveig.app/en/download?url=" + encodeURIComponent(url);
+    
+    setTimeout(() => {
+        window.location.href = finalDownloadLink;
+    }, 2000);
+}
+</script>
 
-        let moviesArray = []; // List format for easier searching
-
-        // Load Data
-        db.ref('movies').on('value', (snapshot) => {
-            const data = snapshot.val();
-            moviesArray = [];
-            for(let id in data) {
-                moviesArray.push({ id, ...data[id] });
-            }
-            render(moviesArray);
-        });
-
-        function render(list) {
-            const grid = document.getElementById('movieGrid');
-            grid.innerHTML = list.length > 0 ? '' : '<p class="col-span-full text-center text-zinc-600 py-10">No results found...</p>';
-            
-            list.forEach(m => {
-                grid.innerHTML += `
-                    <div onclick="window.location.href='player.html?id=${m.id}'" class="cursor-pointer group">
-                        <div class="aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 border border-white/5">
-                            <img src="${m.poster}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        </div>
-                        <h3 class="text-xs font-bold mt-2 truncate">${m.title}</h3>
-                    </div>`;
-            });
-        }
-
-        // --- FIXED SEARCH LOGIC ---
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            const filtered = moviesArray.filter(m => 
-                m.title.toLowerCase().includes(term) || 
-                (m.genre && m.genre.toLowerCase().includes(term))
-            );
-            render(filtered);
-            document.getElementById('sectionTitle').innerText = term ? "Search Results" : "Trending";
-        });
-
-        // Genre Filter
-        function filterGenre(genre) {
-            document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            if(genre === 'All') {
-                render(moviesArray);
-            } else {
-                const filtered = moviesArray.filter(m => m.genre === genre);
-                render(filtered);
-            }
-        }
-    </script>
 </body>
 </html>
