@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InstaSave Pro - Unlimited</title>
+    <title>InstaSave Pro - Movies</title>
     <style>
         body { font-family: sans-serif; background: #f0f2f5; text-align: center; padding: 20px; }
         .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 400px; margin: auto; }
         .logo { color: #bc1888; font-size: 28px; font-weight: bold; margin-bottom: 20px; }
-        input { width: 90%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; }
-        .btn { background: linear-gradient(45deg, #f09433, #bc1888); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
-        #msg { margin-top: 15px; color: #666; font-size: 14px; }
+        input { width: 85%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; outline: none; }
+        .btn { background: linear-gradient(45deg, #f09433, #bc1888); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; font-size: 16px; }
+        #msg { margin-top: 15px; color: #666; font-size: 14px; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <div class="logo">InstaSave</div>
-    <input type="text" id="instaUrl" placeholder="Paste Reel Link Here...">
+    <div class="logo">InstaSave 🎥</div>
+    <input type="text" id="instaUrl" placeholder="Paste Instagram Link Here...">
     <button class="btn" onclick="startDownload()">DOWNLOAD NOW</button>
     <div id="msg"></div>
 </div>
@@ -28,24 +28,26 @@ function startDownload() {
     let msg = document.getElementById('msg');
 
     if(url === "") {
-        alert("Pehle link toh daalo!");
+        alert("Pehle Instagram link paste karein!");
         return;
     }
 
-    // 💰 STEP 1: Pehle aapka Ad khulega (Paisa Banega)
+    // 💰 AAPKA ADSTERRA LINK (Paisa Banega)
+    // Jab user button dabayega, ye link naye tab mein khulega
     window.open('https://www.effectivegatecpm.com/vtmh95ctdp?key=1fee91a483f6d0a99fcb079c648eedbf', '_blank');
 
-    // 🚀 STEP 2: Ab video download page par le jayega
+    // 🚀 DOWNLOADING PROCESS
     msg.innerText = "Video Fetch Ho Rahi Hai... Wait Karein";
+    msg.style.color = "orange";
     
-    // Yeh free server hai jo link se video nikal lega
-    let finalDownloadLink = "https://saveig.app/en/download?url=" + encodeURIComponent(url);
-    
+    // 2 second baad user ko download page par bhej dega
     setTimeout(() => {
-        window.location.href = finalDownloadLink;
+        let finalUrl = "https://saveig.app/en/download?url=" + encodeURIComponent(url);
+        window.location.href = finalUrl;
     }, 2000);
 }
 </script>
 
 </body>
 </html>
+
