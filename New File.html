@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tool Pro Hub 2026</title>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #0f0c29; color: white; margin: 0; padding: 15px; text-align: center; }
+        .container { max-width: 500px; margin: auto; }
+        .card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        h2 { color: #00d2ff; font-size: 18px; margin-bottom: 15px; }
+        input { width: 90%; padding: 12px; border-radius: 8px; border: none; margin-bottom: 10px; outline: none; }
+        .btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; border: none; padding: 12px; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; }
+        .btn:disabled { background: #555 !important; cursor: not-allowed; }
+        .item-list { text-align: left; font-size: 14px; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; margin-bottom: 10px; }
+        .item { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #333; }
+        #fontResults { max-height: 100px; overflow-y: auto; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <script src="https://pl28691981.effectivegatecpm.com/88/da/d5/88dad5dac2f7cf8fbc6c46b26594b8a1.js"></script>
+
+    <div class="container">
+        <h1>🚀 Super Tool Portal</h1>
+
+        <div class="card">
+            <h2>🎥 Insta Reel Downloader</h2>
+            <input type="text" id="instaUrl" placeholder="Paste Reel Link...">
+            <button id="dlBtn" class="btn" onclick="runTool('dl')">DOWNLOAD NOW</button>
+        </div>
+
+        <div class="card">
+            <h2>🎮 Game Cheat Codes</h2>
+            <div class="item-list">
+                <div class="item"><span>GTA 5 Skyfall</span> <span>Active</span></div>
+                <div class="item"><span>Free Fire Diamonds</span> <span>V2.0</span></div>
+            </div>
+            <button id="gameBtn" class="btn" onclick="runTool('game')">GET CHEATS</button>
+        </div>
+
+        <div class="card">
+            <h2>🍿 Movie Release Dates</h2>
+            <div class="item-list">
+                <div class="item"><span>Pushpa 2</span> <span>Check Now</span></div>
+                <div class="item"><span>Singham Again</span> <span>Watch Info</span></div>
+            </div>
+            <button id="movieBtn" class="btn" onclick="runTool('movie')">GET MOVIE LINK</button>
+        </div>
+
+        <div class="card">
+            <h2>❤️ Love Calculator</h2>
+            <input type="text" id="p1" placeholder="Your Name">
+            <input type="text" id="p2" placeholder="Partner Name">
+            <button id="loveBtn" class="btn" onclick="runTool('love')" style="background: #dc2743;">CALCULATE %</button>
+            <div id="loveRes" style="margin-top:10px; font-weight:bold; color:#ffec00;"></div>
+        </div>
+
+        <div class="card">
+            <h2>✨ Stylish Bio Fonts</h2>
+            <input type="text" id="fontIn" placeholder="Type name..." oninput="genFonts()">
+            <div id="fontResults"></div>
+        </div>
+    </div>
+
+<script>
+    // 💰 AAPKA ADSTERRA SMARTLINK (FOR BUTTON CLICKS)
+    const AD_LINK = 'https://www.effectivegatecpm.com/vtmh95ctdp?key=1fee91a483f6d0a99fcb079c648eedbf';
+
+    function runTool(type) {
+        // Pehle ek ad khulega extra kamai ke liye
+        window.open(AD_LINK, '_blank');
+
+        let btnId = (type === 'dl') ? 'dlBtn' : (type === 'game') ? 'gameBtn' : (type === 'movie') ? 'movieBtn' : 'loveBtn';
+        let btn = document.getElementById(btnId);
+        let time = 15;
+        btn.disabled = true;
+
+        let timer = setInterval(() => {
+            if(time <= 0) {
+                clearInterval(timer);
+                btn.disabled = false;
+                btn.innerHTML = "CLICK TO FINISH";
+                btn.onclick = () => { window.location.href = AD_LINK; }; // Final click par ad
+                if(type === 'love') {
+                    document.getElementById('loveRes').innerHTML = "Love Score: " + (Math.floor(Math.random()*40)+60) + "% ❤️";
+                }
+            } else {
+                btn.innerHTML = "Processing... " + time + "s";
+                time--;
+            }
+        }, 1000);
+    }
+
+    function genFonts() {
+        let val = document.getElementById('fontIn').value;
+        let res = document.getElementById('fontResults');
+        if(!val) { res.innerHTML = ""; return; }
+        res.innerHTML = `<div onclick="window.open('${AD_LINK}')" style="cursor:pointer; padding:5px; border-bottom:1px dashed #555;">𝔖𝔞𝔥𝔦𝔩: ${val} 📋</div>`;
+    }
+</script>
+</body>
+</html>

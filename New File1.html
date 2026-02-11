@@ -1,0 +1,53 @@
+const tools = [
+    // --- WRITING & CONTENT ---
+    { name: "ChatGPT", cat: "Writing", desc: "OpenAI ka sabse powerful AI chatbot.", link: "https://chat.openai.com" },
+    { name: "Claude AI", cat: "Writing", desc: "Anthropic ka smart aur safe AI assistant.", link: "https://claude.ai" },
+    { name: "Jasper", cat: "Writing", desc: "Marketing aur ad copy likhne ke liye best.", link: "https://jasper.ai" },
+    { name: "Copy.ai", cat: "Writing", desc: "Social media aur blog posts likhne ke liye.", link: "https://copy.ai" },
+    { name: "Writesonic", cat: "Writing", desc: "SEO-optimized articles banane ke liye.", link: "https://writesonic.com" },
+    { name: "Quillbot", cat: "Writing", desc: "Paraphrasing aur grammar check tool.", link: "https://quillbot.com" },
+    { name: "Grammarly", cat: "Writing", desc: "Professional writing aur spell checker.", link: "https://grammarly.com" },
+    { name: "HuggingChat", cat: "Writing", desc: "Open-source AI chat alternative.", link: "https://huggingface.co/chat" },
+
+    // --- IMAGE GENERATION ---
+    { name: "Midjourney", cat: "Image", desc: "High-quality realistic AI images.", link: "https://midjourney.com" },
+    { name: "DALL-E 3", cat: "Image", desc: "OpenAI ka text-to-image generator.", link: "https://openai.com/dall-e-3" },
+    { name: "Leonardo.ai", cat: "Image", desc: "Game assets aur art banane ke liye best.", link: "https://leonardo.ai" },
+    { name: "Stable Diffusion", cat: "Image", desc: "Open-source powerful image generator.", link: "https://stablediffusionweb.com" },
+    { name: "Adobe Firefly", cat: "Image", desc: "Adobe ka naya generative AI tool.", link: "https://firefly.adobe.com" },
+    { name: "BlueWillow", cat: "Image", desc: "Free Midjourney alternative on Discord.", link: "https://bluewillow.ai" },
+    { name: "Playground AI", cat: "Image", desc: "Easy to use online image creator.", link: "https://playgroundai.com" },
+
+    // --- VIDEO & ANIMATION ---
+    { name: "Sora", cat: "Video", desc: "Text se realistic video banane wala tool.", link: "https://openai.com/sora" },
+    { name: "HeyGen", cat: "Video", desc: "AI avatars aur video translation tool.", link: "https://heygen.com" },
+    { name: "Runway Gen-2", cat: "Video", desc: "Professional video-to-video editing AI.", link: "https://runwayml.com" },
+    { name: "Pika Labs", cat: "Video", desc: "Cinematic animation banane ke liye.", link: "https://pika.art" },
+    { name: "Synthesia", cat: "Video", desc: "AI avatars se corporate videos banayein.", link: "https://synthesia.io" },
+    { name: "InVideo AI", cat: "Video", desc: "YouTube videos banane ke liye script-to-video.", link: "https://invideo.io" },
+    { name: "Luma Dream Machine", cat: "Video", desc: "High-quality realistic clips generator.", link: "https://lumalabs.ai" },
+
+    // --- AUDIO & VOICE ---
+    { name: "ElevenLabs", cat: "Voice", desc: "Duniya ki sabse realistic AI voice.", link: "https://elevenlabs.io" },
+    { name: "Adobe Podcast", cat: "Audio", desc: "Kharaab audio ko studio jaisa banayein.", link: "https://podcast.adobe.com" },
+    { name: "Suno AI", cat: "Music", desc: "Poora gana banayein (vocal + music).", link: "https://suno.com" },
+    { name: "Udio", cat: "Music", desc: "High-fidelity AI music generation.", link: "https://udio.com" },
+    { name: "Murf AI", cat: "Voice", desc: "Professional voiceovers for ads.", link: "https://murf.ai" },
+
+    // --- CODING & TECH ---
+    { name: "GitHub Copilot", cat: "Coding", desc: "Programmers ka sabse bada assistant.", link: "https://github.com/features/copilot" },
+    { name: "Replit Ghostwriter", cat: "Coding", desc: "Browser mein code likhne ke liye AI.", link: "https://replit.com" },
+    { name: "Cursor", cat: "Coding", desc: "AI-powered code editor (Best for Devs).", link: "https://cursor.sh" },
+    { name: "Tabnine", cat: "Coding", desc: "Private aur secure AI code completion.", link: "https://tabnine.com" },
+    { name: "Blackbox AI", cat: "Coding", desc: "Code search aur generation fast karein.", link: "https://blackbox.ai" },
+
+    // --- PRODUCTIVITY & BUSINESS ---
+    { name: "Perplexity AI", cat: "Search", desc: "Google se behtar answer dene wala search.", link: "https://perplexity.ai" },
+    { name: "Notion AI", cat: "Business", desc: "Notes aur tasks ko manage karne wala AI.", link: "https://notion.so" },
+    { name: "Otter.ai", cat: "Business", desc: "Meetings ko auto-transcribe karein.", link: "https://otter.ai" },
+    { name: "Gamma App", cat: "Design", desc: "AI se presentations aur websites banayein.", link: "https://gamma.app" },
+    { name: "Tome", cat: "Design", desc: "Storytelling aur slide deck creator AI.", link: "https://tome.app" },
+    { name: "ChatPDF", cat: "Utility", desc: "Kisi bhi PDF se sawal-jawab karein.", link: "https://chatpdf.com" },
+    { name: "Remove.bg", cat: "Utility", desc: "1-click mein photo background remove karein.", link: "https://remove.bg" },
+    { name: "Upscale.media", cat: "Utility", desc: "Photo ki quality aur resolution badhayein.", link: "https://upscale.media" }
+];

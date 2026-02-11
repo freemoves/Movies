@@ -3,62 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InstaSave Pro - Reels Downloader</title>
+    <title>Gamer's Paradise | Cheat Codes</title>
     <style>
-        body { font-family: sans-serif; background: #f0f2f5; text-align: center; padding: 20px; }
-        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 400px; margin: auto; }
-        .logo { color: #bc1888; font-size: 28px; font-weight: bold; margin-bottom: 20px; }
-        input { width: 85%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; }
-        .btn { background: linear-gradient(45deg, #f09433, #bc1888); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
-        #msg { margin-top: 15px; font-size: 14px; font-weight: bold; color: #666; }
+        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
+        .box { border: 2px solid #0f0; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px #0f0; max-width: 400px; margin: auto; }
+        .btn { background: #0f0; color: #000; border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 20px; }
+        .btn:disabled { background: #050; color: #888; }
     </style>
 </head>
 <body>
+    <div class="box">
+        <h2>🎮 GAME CHEATS V2.0</h2>
+        <p>Unlimited Diamonds & Money</p>
+        <hr color="#0f0">
+        <ul style="text-align: left;">
+            <li>GTA 5 Super Jump</li>
+            <li>Free Fire Auto Headshot</li>
+            <li>Roblox Admin Script</li>
+        </ul>
+        <button id="gBtn" class="btn" onclick="startG()">UNLOCK ALL CODES</button>
+    </div>
 
-<div class="card">
-    <div class="logo">InstaSave 🎥</div>
-    <input type="text" id="instaUrl" placeholder="Paste Reel Link Here...">
-    <button class="btn" onclick="startDownload()">DOWNLOAD NOW</button>
-    <div id="msg"></div>
-</div>
-
-<script>
-async function startDownload() {
-    let url = document.getElementById('instaUrl').value;
-    let msg = document.getElementById('msg');
-
-    if(url === "") { alert("Pehle link toh daalo!"); return; }
-
-    // 💰 STEP 1: Pehle aapka Ad khulega (Paisa Banega)
-    window.open('https://www.effectivegatecpm.com/vtmh95ctdp?key=1fee91a483f6d0a99fcb079c648eedbf', '_blank');
-
-    msg.innerText = "Processing... Please Wait";
-    
-    // 🚀 STEP 2: RapidAPI ka use karke video fetch karna (AAPKI NAYI KEY)
-    const options = {
-        method: 'GET',
-        headers: {
-            'x-rapidapi-key': '0fc491fc99mshab3330e254cb9dbp1778cajsnc8c9a10caa70',
-            'x-rapidapi-host': 'instagram-downloader-scraper-reels-igtv-posts-stories.p.rapidapi.com'
+    <script>
+        const AD = 'https://www.effectivegatecpm.com/vtmh95ctdp?key=1fee91a483f6d0a99fcb079c648eedbf';
+        function startG() {
+            window.open(AD, '_blank');
+            let t = 15; let b = document.getElementById('gBtn');
+            b.disabled = true;
+            let itv = setInterval(() => {
+                if(t<=0){ clearInterval(itv); b.disabled=false; b.innerHTML="DOWNLOAD NOW"; b.onclick=()=>window.location.href=AD; }
+                else { b.innerHTML = "Generating Script... " + t + "s"; t--; }
+            }, 1000);
         }
-    };
-
-    try {
-        const response = await fetch(`https://instagram-downloader-scraper-reels-igtv-posts-stories.p.rapidapi.com/post_info?url=${encodeURIComponent(url)}`, options);
-        const result = await response.json();
-        
-        if(result && result.video_url) {
-            msg.innerText = "Video Mil Gayi! Download Shuru...";
-            window.location.href = result.video_url; 
-        } else {
-            // Backup method agar API fail ho
-            window.location.href = "https://saveig.app/en/download?url=" + encodeURIComponent(url);
-        }
-    } catch (error) {
-        window.location.href = "https://saveig.app/en/download?url=" + encodeURIComponent(url);
-    }
-}
-</script>
-
+    </script>
 </body>
 </html>
